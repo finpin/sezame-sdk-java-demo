@@ -1,6 +1,6 @@
 # Demo application for Sezame Java SDK
 
-This demo application is based on Spring Boot and comes with its own embedded Tomcat application server. Thus the demo is executable as a standalone version and does not need to be deployed.
+This demo application is based on [Spring Boot](http://projects.spring.io/spring-boot/) and comes with its own embedded Tomcat application server. Thus the demo is executable as a standalone version and does not need to be deployed.
 
 ## Prerequisites
 
