@@ -18,4 +18,4 @@ Ensure Java 8 JDK and Maven 3.x are installed and added to the environment path.
 
 ## Run demo
 
-    java -jar target\sezame-java-demo-app-0.0.1-SNAPSHOT.jar
+    java -jar target/sezame-java-demo-app-0.0.1-SNAPSHOT.jar
