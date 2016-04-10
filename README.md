@@ -4,7 +4,7 @@ This demo application is based on [Spring Boot](http://projects.spring.io/spring
 
 ## Prerequisites
 
-Ensure Java 8 JDK and Maven 3.x are installed and added to the environment path.
+Ensure Java 7 JDK and Maven 3.x are installed and added to the environment path.
 
 ## Install Sezame Java SDK in your local Maven repository
 
