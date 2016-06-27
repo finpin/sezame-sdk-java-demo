@@ -17,9 +17,6 @@ import java.security.KeyStore;
 @SpringBootApplication
 public class SezameJavaDemoApplication {
 
-    private static final String SAMPLE_SERVER_KEYSTORE_FILENAME = "sample_serverkeystore.jks";
-    private static final String SAMPLE_SERVER_KEYSTORE_PASSWORD = "changeit";
-
     private static final String TEST_REGISTRATION_EMAIL = "test@gutschi.net";
     private static final String TEST_SERVICE_NAME = "JAVA test service";
 
@@ -41,26 +38,11 @@ public class SezameJavaDemoApplication {
 
     private static SSLContext initiateSslContextForHttpClient() {
         try {
-            restClient.setServerKeystore(getSampleServerKeystore());
             HttpsURLConnection.setDefaultSSLSocketFactory(restClient.getSslContext().getSocketFactory());
             return restClient.getSslContext();
         }
         catch (Exception e) {
             log.error("An error occurred trying to initiate the SSL context!\nError message: " + e.getMessage());
-            System.exit(1);
-            return null;
-        }
-    }
-
-    private static KeyStore getSampleServerKeystore() {
-        try {
-            KeyStore keyStore = KeyStore.getInstance("JKS");
-            InputStream stream = Thread.currentThread().getContextClassLoader().getResourceAsStream(SAMPLE_SERVER_KEYSTORE_FILENAME);
-            keyStore.load(stream, SAMPLE_SERVER_KEYSTORE_PASSWORD.toCharArray());
-            return keyStore;
-        }
-        catch (Exception e) {
-            log.error("Could not load server keystore from resources!\nError message: " + e.getMessage());
             System.exit(1);
             return null;
         }
